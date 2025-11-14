@@ -8,7 +8,7 @@ const MusicPlayer = () => {
   const audioRef = useRef<HTMLAudioElement>(null);
 
   // Free birthday music URL (using a royalty-free happy birthday tune)
-  const musicUrl = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3";
+  const musicUrl = "https://www.bensound.com/bensound-music/bensound-memories.mp3";
 
   useEffect(() => {
     if (audioRef.current) {
@@ -35,21 +35,21 @@ const MusicPlayer = () => {
   };
 
   return (
-    <div className="fixed bottom-8 right-8 z-50 flex gap-2">
+    <div className="fixed bottom-4 right-4 lg:bottom-8 lg:right-8 z-40 flex gap-2 safe-area-all">
       <Button
         onClick={togglePlay}
         size="lg"
-        className="rounded-full w-14 h-14 shadow-glow animate-pulse-glow bg-gradient-sunset border-0"
+        className="rounded-full w-12 h-12 sm:w-14 sm:h-14 shadow-glow animate-pulse-glow bg-gradient-sunset border-0 touch-target"
       >
-        {isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5 ml-1" />}
+        {isPlaying ? <Pause className="w-4 h-4 sm:w-5 sm:h-5" /> : <Play className="w-4 h-4 sm:w-5 sm:h-5 sm:ml-1" />}
       </Button>
       <Button
         onClick={toggleMute}
         size="lg"
         variant="secondary"
-        className="rounded-full w-14 h-14 shadow-card"
+        className="rounded-full w-12 h-12 sm:w-14 sm:h-14 shadow-card touch-target"
       >
-        {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
+        {isMuted ? <VolumeX className="w-4 h-4 sm:w-5 sm:h-5" /> : <Volume2 className="w-4 h-4 sm:w-5 sm:h-5" />}
       </Button>
       <audio ref={audioRef} loop src={musicUrl} />
     </div>

@@ -2,7 +2,6 @@ import { useState } from "react";
 import Hero from "@/components/Hero";
 import MessageSection from "@/components/MessageSection";
 import PhotoGallery from "@/components/PhotoGallery";
-import FinalMessage from "@/components/FinalMessage";
 import Confetti from "@/components/Confetti";
 import MusicPlayer from "@/components/MusicPlayer";
 import FloatingElements from "@/components/FloatingElements";
@@ -11,14 +10,12 @@ import CursorTrail from "@/components/CursorTrail";
 import InteractiveCake from "@/components/InteractiveCake";
 import MemoryTimeline from "@/components/MemoryTimeline";
 import SmoothNav from "@/components/SmoothNav";
-// import LoadingScreen from "@/components/LoadingScreen";
-// import Interactive3DCake from "@/components/Interactive3DCake";
-// import VoiceMessageRecorder from "@/components/VoiceMessageRecorder";
 import MagicalSurprise from "@/components/MagicalSurprise";
+import FinalMessage from "@/components/FinalMessage";
 
 const Index = () => {
   return (
-    <div className="min-h-screen relative">
+    <div className="min-h-screen relative overflow-x-hidden mobile-nav-safe-area">
       {/* Enhanced Background Effects */}
       <AnimatedBackground />
       <Confetti />
@@ -28,28 +25,32 @@ const Index = () => {
       <SmoothNav />
       
       {/* Main Content Sections */}
-      <div id="hero">
+      <div id="hero" className="scroll-mt-16">
         <Hero />
       </div>
       
-      <div id="messages">
+      <div id="messages" className="scroll-mt-16">
         <MessageSection />
       </div>
       
-      <MemoryTimeline />
+      <div className="scroll-mt-16">
+        <MemoryTimeline />
+      </div>
       
-      <div id="gallery">
+      <div id="gallery" className="scroll-mt-16">
         <PhotoGallery />
       </div>
       
       {/* New Interactive Features */}
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
         <MagicalSurprise />
       </div>
       
-      <div id="final">
+      <div id="final" className="scroll-mt-16">
         <FinalMessage />
-        <InteractiveCake />
+        <div className="pb-20 sm:pb-24 lg:pb-20">
+          <InteractiveCake />
+        </div>
       </div>
     </div>
   );

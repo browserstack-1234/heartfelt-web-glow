@@ -3,26 +3,26 @@ import { Card } from "@/components/ui/card";
 
 const MessageSection = () => {
   return (
-    <section className="py-20 px-4 relative">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-16">
-          <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border-2 border-purple-300 mx-auto max-w-3xl">
-            <Sparkles className="w-12 h-12 mx-auto mb-4 text-purple-600 animate-pulse" />
-            <h2 className="text-5xl font-bold mb-4 text-purple-700 drop-shadow-lg">
+    <section className="responsive-spacing-lg relative no-overflow-x safe-area-top">
+      <div className="responsive-container">
+        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+          <div className="bg-white/95 backdrop-blur-sm rounded-2xl responsive-spacing-sm shadow-2xl border-2 border-purple-300 mx-auto max-w-3xl mobile-simplified">
+            <Sparkles className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 mx-auto mb-3 sm:mb-4 text-purple-600 animate-pulse mobile-reduced-motion" />
+            <h2 className="responsive-text-4xl font-bold mb-4 text-purple-700 drop-shadow-lg mobile-reduced-motion">
               A Message From The Heart
             </h2>
           </div>
         </div>
         
-        <div className="space-y-8">
+        <div className="space-y-6 sm:space-y-8">
           <Card 
-            className="backdrop-blur-xl bg-background/30 p-8 rounded-2xl border-2 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 animate-slide-in-left border-accent/30"
+            className="backdrop-blur-xl bg-background/30 responsive-spacing-sm rounded-2xl border-2 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 animate-slide-in-left border-accent/30 mobile-simplified touch-target"
             style={{
               background: "var(--gradient-glass)",
               animation: "glow-pulse 4s ease-in-out infinite",
             }}
           >
-            <p className="text-xl md:text-2xl leading-relaxed text-center animate-fade-in-up">
+            <p className="text-base sm:text-lg lg:text-xl xl:text-2xl leading-relaxed text-center animate-fade-in-up animation-delay-200">
               From the moment we became friends, you've filled my life with endless laughter, 
               unwavering support, and countless precious memories. You're not just my best friend—
               you're my chosen family, my partner in crime, and my rock through everything.
@@ -30,38 +30,38 @@ const MessageSection = () => {
           </Card>
           
           <Card 
-            className="backdrop-blur-xl bg-background/30 p-8 rounded-2xl border-2 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 animate-slide-in-right border-primary/30"
+            className="backdrop-blur-xl bg-background/30 responsive-spacing-sm rounded-2xl border-2 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 animate-slide-in-right border-primary/30 mobile-simplified touch-target"
             style={{
               background: "var(--gradient-glass)",
               animation: "glow-pulse 4s ease-in-out infinite",
               animationDelay: "0.5s",
             }}
           >
-            <p className="text-xl md:text-2xl leading-relaxed text-center animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+            <p className="text-base sm:text-lg lg:text-xl xl:text-2xl leading-relaxed text-center animate-fade-in-up animation-delay-200">
               Your kindness, strength, and beautiful soul inspire me every single day. 
               Thank you for being authentically YOU, for accepting me completely, 
-              and for making every ordinary moment extraordinary just by being there.I hope our relation will be long-lasting, filled with love, trust, and moments that make our hearts feel at home in each other forever.
+              and for making every ordinary moment extraordinary just by being there. I hope our relation will be long-lasting, filled with love, trust, and moments that make our hearts feel at home in each other forever.
             </p>
           </Card>
           
           <Card 
-            className="backdrop-blur-xl bg-background/30 p-8 rounded-2xl border-2 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 animate-slide-in-left border-secondary/30"
+            className="backdrop-blur-xl bg-background/30 p-4 sm:p-6 lg:p-8 rounded-2xl border-2 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 animate-slide-in-left border-secondary/30"
             style={{
               background: "var(--gradient-glass)",
               animation: "glow-pulse 4s ease-in-out infinite",
               animationDelay: "1s",
             }}
           >
-            <p className="text-xl md:text-2xl leading-relaxed text-center animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+            <p className="text-base sm:text-lg lg:text-xl xl:text-2xl leading-relaxed text-center animate-fade-in-up animation-delay-400">
               On this special day, I wish you all the happiness in the world, 
               dreams that come true, adventures that take your breath away, 
               and love that fills your heart to overflowing. You deserve nothing but the absolute best!
             </p>
           </Card>
           
-          <div className="text-center pt-8">
-            <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-pink-300 mx-auto max-w-2xl">
-              <p className="text-3xl font-bold text-pink-600 drop-shadow-sm">
+          <div className="text-center pt-6 sm:pt-8">
+            <div className="bg-white/90 backdrop-blur-sm rounded-xl p-4 sm:p-6 shadow-lg border border-pink-300 mx-auto max-w-2xl">
+              <p className="text-xl sm:text-2xl lg:text-3xl font-bold text-pink-600 drop-shadow-sm">
                 Here's to you and another amazing year! 🎂✨
               </p>
             </div>

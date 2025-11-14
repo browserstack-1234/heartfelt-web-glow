@@ -20,14 +20,14 @@ const InteractiveCake = () => {
   };
 
   return (
-    <div className="relative flex flex-col items-center gap-6 p-8">
-      <h3 className="text-2xl font-bold text-foreground mb-4 animate-bounce-subtle">
+    <div className="relative flex flex-col items-center gap-4 sm:gap-6 p-4 sm:p-6 lg:p-8">
+      <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-2 sm:mb-4 animate-bounce-subtle text-center">
         Make a Wish! 🌟
       </h3>
       
       <div className="relative">
         {/* Candle flames */}
-        <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 flex gap-8">
+        <div className="absolute -top-8 sm:-top-10 lg:-top-12 left-1/2 transform -translate-x-1/2 flex gap-4 sm:gap-6 lg:gap-8">
           {candles.map((isLit, index) => (
             <div
               key={index}
@@ -38,8 +38,8 @@ const InteractiveCake = () => {
                 animation: isLit ? "candle-flicker 1.5s ease-in-out infinite" : "blow-away 0.5s ease-out",
               }}
             >
-              <div className="w-2 h-8 bg-gradient-to-t from-accent to-yellow-400 rounded-full relative">
-                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-3 h-4 bg-yellow-400 rounded-full blur-sm animate-pulse" />
+              <div className="w-1.5 h-6 sm:w-2 sm:h-7 lg:w-2 lg:h-8 bg-gradient-to-t from-accent to-yellow-400 rounded-full relative">
+                <div className="absolute -top-2 sm:-top-2.5 lg:-top-3 left-1/2 transform -translate-x-1/2 w-2 h-3 sm:w-2.5 sm:h-3.5 lg:w-3 lg:h-4 bg-yellow-400 rounded-full blur-sm animate-pulse" />
               </div>
             </div>
           ))}
@@ -48,19 +48,21 @@ const InteractiveCake = () => {
         {/* Cake */}
         <button
           onClick={handleBlow}
-          className="relative group cursor-pointer"
+          className="relative group cursor-pointer p-4 rounded-full hover:bg-accent/10 transition-all duration-300 min-w-[80px] min-h-[80px] sm:min-w-[100px] sm:min-h-[100px] lg:min-w-[140px] lg:min-h-[140px] flex items-center justify-center"
           disabled={isBlown}
+          aria-label="Blow out the candles to make a wish"
         >
           <Cake 
-            size={120} 
-            className="text-accent fill-accent transition-all duration-300 group-hover:scale-110"
-            style={{ filter: "drop-shadow(0 0 20px currentColor)" }}
+            className="w-16 h-16 sm:w-20 sm:h-20 lg:w-28 lg:h-28 text-accent fill-accent transition-all duration-300 group-hover:scale-110 group-active:scale-95"
+            style={{ filter: "drop-shadow(0 0 10px currentColor) drop-shadow(0 0 20px currentColor)" }}
           />
           
           {!isBlown && (
-            <div className="absolute -bottom-16 left-1/2 transform -translate-x-1/2 whitespace-nowrap">
-              <p className="text-sm text-muted-foreground animate-pulse">
-                Click to blow the candles! 🎂
+            <div className="absolute -bottom-12 sm:-bottom-14 lg:-bottom-16 left-1/2 transform -translate-x-1/2 whitespace-nowrap">
+              <p className="text-xs sm:text-sm text-muted-foreground animate-pulse text-center px-2">
+                {/* Show different text based on device */}
+                <span className="hidden sm:inline">Click to blow the candles! 🎂</span>
+                <span className="sm:hidden">Tap to blow! 🎂</span>
               </p>
             </div>
           )}
@@ -72,10 +74,10 @@ const InteractiveCake = () => {
             {Array.from({ length: 12 }).map((_, i) => (
               <Sparkles
                 key={i}
-                className="absolute text-yellow-400 animate-ping"
+                className="absolute text-yellow-400 animate-ping w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6"
                 style={{
-                  left: `${50 + Math.cos((i * Math.PI * 2) / 12) * 60}%`,
-                  top: `${50 + Math.sin((i * Math.PI * 2) / 12) * 60}%`,
+                  left: `${50 + Math.cos((i * Math.PI * 2) / 12) * 50}%`,
+                  top: `${50 + Math.sin((i * Math.PI * 2) / 12) * 50}%`,
                   animationDelay: `${i * 0.1}s`,
                 }}
               />

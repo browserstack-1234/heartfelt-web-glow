@@ -8,8 +8,7 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div 
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroImage})` }}
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat hero-bg"
       >
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
       </div>
@@ -17,11 +16,11 @@ const Hero = () => {
       {/* Radial Gradient Overlay */}
       <div className="absolute inset-0 gradient-radial" />
       
-      {/* Floating Hearts - More animated */}
+      {/* Floating Hearts - More animated - Responsive */}
       {Array.from({ length: 8 }).map((_, i) => (
         <div
           key={i}
-          className="absolute animate-float-random"
+          className="absolute animate-float-random hidden sm:block"
           style={{
             left: `${10 + Math.random() * 80}%`,
             top: `${10 + Math.random() * 80}%`,
@@ -36,7 +35,7 @@ const Hero = () => {
                 : i % 3 === 1
                 ? "text-primary fill-primary"
                 : "text-secondary fill-secondary"
-            } opacity-40 animate-pulse-slow`}
+            } opacity-40 animate-pulse-slow mobile-reduced-motion`}
             style={{
               filter: "drop-shadow(0 0 8px currentColor)",
             }}
@@ -45,7 +44,7 @@ const Hero = () => {
       ))}
       
       {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto responsive-container safe-area-all">
         <motion.div
           initial={{ opacity: 0, y: 100, scale: 0.5 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -56,7 +55,7 @@ const Hero = () => {
           }}
         >
           <h1 
-            className="text-7xl md:text-9xl font-bold mb-6 bg-clip-text text-transparent"
+            className="responsive-text-9xl font-bold mb-6 bg-clip-text text-transparent mobile-reduced-motion"
             style={{
               background: "var(--gradient-holographic)",
               backgroundSize: "300% 300%",
@@ -77,12 +76,12 @@ const Hero = () => {
         >
           <MorphingText
             texts={[
-              "To My Amazing Bestie 🎉",
-              "My Partner in Crime 💫",
-              "My Chosen Family 💖",
-              "My Forever Friend 🌟"
+              "To My Amazing Bestie ",
+              "My Partner in Crime ",
+              "My Chosen Family ",
+              "My Forever Friend "
             ]}
-            className="text-3xl md:text-5xl font-semibold h-20 text-foreground drop-shadow-glow"
+            className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold h-12 xs:h-16 sm:h-20 md:h-24 text-foreground drop-shadow-glow mobile-reduced-motion"
             interval={2500}
           />
         </motion.div>
@@ -92,15 +91,32 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
         >
-          <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+          <p className="responsive-text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
             Today is all about celebrating YOU and the incredible person you are!
           </p>
         </motion.div>
         
-        {/* Animated scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-primary rounded-full flex items-start justify-center p-2">
-            <div className="w-1 h-2 bg-primary rounded-full animate-scroll" />
+        {/* Responsive scroll indicator */}
+        <div className="absolute bottom-4 xs:bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+          {/* Icon-based indicator for larger screens */}
+          <div className="hidden xs:block sm:hidden">
+            <div className="w-5 h-8 border-2 border-primary rounded-full flex items-start justify-center p-1.5 touch-target">
+              <div className="w-1 h-2 bg-primary rounded-full animate-scroll" />
+            </div>
+          </div>
+          
+          {/* Text indicator for mobile */}
+          <div className="block xs:hidden">
+            <div className="text-primary text-xs animate-pulse touch-target text-center">
+              Scroll down ↓
+            </div>
+          </div>
+          
+          {/* Larger indicator for tablet+ */}
+          <div className="hidden sm:block">
+            <div className="w-6 h-10 border-2 border-primary rounded-full flex items-start justify-center p-2 touch-target">
+              <div className="w-1 h-2 bg-primary rounded-full animate-scroll" />
+            </div>
           </div>
         </div>
       </div>
