@@ -64,8 +64,8 @@ const SmoothNav = () => {
         </div>
       </nav>
 
-      {/* Mobile/Tablet Navigation - Bottom */}
-      <nav className="lg:hidden fixed bottom-1 left-1 right-8 xs:bottom-2 xs:left-2 xs:right-12 sm:bottom-2 sm:left-2 sm:right-12 md:bottom-3 md:left-3 md:right-16 z-50 backdrop-blur-xl bg-background/30 px-1 py-1 xs:px-1.5 xs:py-1.5 sm:px-3 sm:py-1.5 md:px-4 md:py-2 rounded-full border border-white/20 shadow-xl glass-nav safe-area-bottom"
+      {/* Mobile/Tablet Navigation - Hidden on mobile, only visible on tablets */}
+      <nav className="hidden md:flex lg:hidden fixed bottom-1 left-1 right-8 xs:bottom-2 xs:left-2 xs:right-12 sm:bottom-2 sm:left-2 sm:right-12 md:bottom-3 md:left-3 md:right-16 z-50 backdrop-blur-xl bg-background/30 px-1 py-1 xs:px-1.5 xs:py-1.5 sm:px-3 sm:py-1.5 md:px-4 md:py-2 rounded-full border border-white/20 shadow-xl glass-nav safe-area-bottom"
       >
         <div className="flex gap-1 xs:gap-1.5 sm:gap-2.5 md:gap-3">
           {sections.map(({ id, icon: Icon, label }) => (
