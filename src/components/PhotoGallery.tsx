@@ -1,34 +1,41 @@
 import { Card } from "@/components/ui/card";
+import img1 from "@/assets/1.jpg";
+import img2 from "@/assets/2.jpg";
+import img3 from "@/assets/3.jpg";
+import img4 from "@/assets/4.jpg";
+import img5 from "@/assets/5.jpg";
+import img6 from "@/assets/6.jpg";
+
 
 // Placeholder for her photos - replace these with actual photo paths
 const photos = [
   {
-    src: "src\\assets\\2.jpg",
+    src: img2,
     caption: "Your Beautiful Smile ✨",
     quote: "Your smile lights up my world"
   },
   {
-    src: "src\\assets\\1.jpg",
+    src: img1,
     caption: "Radiant & Gorgeous 💫",
     quote: "You shine brighter than stars"
   },
   {
-    src: "src\\assets\\3.jpg",
+    src: img3,
     caption: "Pure Joy & Happiness 🌟",
     quote: "Your happiness is contagious"
   },
   {
-    src: "src\\assets\\4.jpg",
+    src: img4,
     caption: "Absolutely Stunning 💖",
     quote: "Beautiful inside and out"
   },
   {
-    src: "src\\assets\\8.jpg",
+    src: img6,
     caption: "My Amazing Bestie 🎉",
     quote: "Grateful for your friendship"
   },
   {
-    src: "src\\assets\\5.jpg",
+    src: img5,
     caption: "Forever in My Heart 💕",
     quote: "You mean the world to me"
   }
